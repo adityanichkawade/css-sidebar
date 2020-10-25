@@ -1,0 +1,76 @@
+/*
+  Author: Aditya Nichkawade
+  Demo: Showing the expanding and hiding of sidebar without using javascript only by CSS
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar-icon {
+    text-align: center;
+    font-size: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    cursor: pointer;
+    float: right;
+    overflow: auto;
+}
+
+.sidebar-wrapper {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: skyblue;
+    color: white;
+    width: 0;
+    overflow: hidden;
+    transition-property: width;
+    transition-duration: 0.5s;
+}
+
+.sidebar {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.sidebar-item {
+    display: inline-block;
+    padding: 1rem 0rem;
+    cursor: pointer;
+}
+
+.sidebar-item:hover {
+    text-decoration: underline;
+}
+
+/*
+   For desktop - Show the sidebar when click on the sidebar burger icon
+   as well keep it expanded on hover.
+*/
+.sidebar-icon:active + .sidebar-wrapper,
+.sidebar-wrapper:hover {
+    width: 20rem;
+}
+
+/*
+   For mobile or any touch base - Show the sidebar when click icon
+   as well keep it expanded on hover (applied above).
+*/
+@media screen and (max-width: 768px) {
+    .sidebar-icon:hover + .sidebar-wrapper {
+        width: 20rem;
+    }
+}
