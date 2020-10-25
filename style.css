@@ -74,3 +74,7 @@ body {
         width: 20rem;
     }
 }
+.instruction {
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
